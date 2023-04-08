@@ -1,16 +1,12 @@
 import React from "react";
 import FaceRow from "./FaceRow";
 
-const Face = () => {
-  const RenderRows = () => {
-    return [...Array(9)].map((e, index) => {
-      return <FaceRow key={index} />;
-    });
-  };
-
+const Face = ({ pattern }) => {
   return (
     <div>
-      <RenderRows />
+      {pattern.map((row, index) => (
+        <FaceRow key={index} rowOfPixelsArray={row} />
+      ))}
     </div>
   );
 };

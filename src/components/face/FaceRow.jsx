@@ -1,16 +1,19 @@
 import React from "react";
 import { Row, Pixel } from "../../styles/Face.style";
 
-const FaceRow = () => {
+const FaceRow = ({ rowOfPixelsArray }) => {
   const RenderPixels = () => {
-    return [...Array(9)].map((e, index) => {
-      return <Pixel key={index} />;
+    rowOfPixelsArray.map((pixel, index) => {
+      console.log(pixel);
+      return <Pixel key={index} on={pixel} />;
     });
   };
 
   return (
     <Row>
-      <RenderPixels />
+      {rowOfPixelsArray.map((pixel, index) => (
+        <Pixel key={index} on={pixel} />
+      ))}
     </Row>
   );
 };
