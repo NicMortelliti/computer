@@ -1,10 +1,18 @@
 import React from "react";
 import FaceRow from "./FaceRow";
+import FaceAnimation from "./FaceAnimation";
+import { eyes, mouth } from "../../data/patterns";
 
-const Face = ({ pattern }) => {
+const Face = () => {
+  const eyesPattern = eyes.blank;
+  const mouthPattern = mouth.blankOpen;
+
   return (
     <div>
-      {pattern.map((row, index) => (
+      {eyesPattern.map((row, index) => (
+        <FaceRow key={index} rowOfPixelsArray={row} />
+      ))}
+      {mouthPattern.map((row, index) => (
         <FaceRow key={index} rowOfPixelsArray={row} />
       ))}
     </div>
