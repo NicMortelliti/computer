@@ -12,6 +12,6 @@ export const Row = styled.div`
 export const Pixel = styled.div`
   width: 20px;
   aspect-ratio: 1/1;
-  background-color: ${({ on }) => (on ? "orange" : "transparent")};
+  background-color: ${({ $on }) => ($on ? "orange" : "transparent")};
   margin: 1px;
 `;
