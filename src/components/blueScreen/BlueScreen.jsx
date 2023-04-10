@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BarGraph,
   BarGraphPtr,
@@ -6,25 +6,27 @@ import {
 } from "../../styles/BlueScreen.style";
 
 const BlueScreen = () => {
-  const RenderBarGraphs = () => {
-    return (
-      <>
-        <BarGraph>
-          <BarGraphPtr bgColor="green" />
-        </BarGraph>
-        <BarGraph>
-          <BarGraphPtr bgColor="blue" />
-        </BarGraph>
-        <BarGraph>
-          <BarGraphPtr bgColor="red" />
-        </BarGraph>
-      </>
-    );
-  };
+  const [selectedBarIndex, setSelectedBarIndex] = useState(null);
+  const numberOfBars = 3;
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setSelectedBarIndex(Math.floor(Math.random() * numberOfBars));
+    }, Math.random() * 1000);
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
   return (
     <BlueScreenCont>
-      <RenderBarGraphs />
+      {Array.from({ length: numberOfBars }).map((_, index) => (
+        <BarGraph
+          key={index}
+          align={index === selectedBarIndex ? "end" : "start"}>
+          <BarGraphPtr />
+        </BarGraph>
+      ))}
     </BlueScreenCont>
   );
 };

@@ -8,7 +8,7 @@ const BlackScreen = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setSelectedCircleIndex(Math.floor(Math.random() * numberOfCircles));
-    }, Math.random() * 1000);
+    }, Math.random() * 1500);
     return () => {
       clearInterval(intervalId);
     };

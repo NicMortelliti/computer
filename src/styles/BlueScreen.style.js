@@ -3,17 +3,20 @@ import styled from "styled-components";
 const blueColor = "#4472BA";
 
 export const BarGraphPtr = styled.div`
-  background-color: ${({ bgColor }) => (bgColor ? bgColor : "white")};
-  width: 20px;
+  background-color: red;
+  width: 12px;
   height: 20px;
+  position: absolute;
 `;
 
 export const BarGraph = styled.div`
   display: flex;
-  width: 20px;
+  width: 16px;
   border: 2px solid white;
   height: 80%;
   margin-right: 10px;
+  position: relative;
+  align-items: ${({ align }) => align};
 `;
 
 export const BlueScreenCont = styled.div`
