@@ -23,7 +23,6 @@ export const PingPongCont = styled.div`
   border: 2px solid white;
   background-color: ${blueColor};
   height: 50px;
-  margin: 10px 0 5px;
   padding: 0 10px;
   align-items: center;
   justify-content: center;

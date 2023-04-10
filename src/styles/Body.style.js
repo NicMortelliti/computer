@@ -7,5 +7,6 @@ export const Body = styled.div`
   flex-direction: column;
   padding: 10px;
   border: 3px solid ${borderColor};
-  width: min-content; ;
+  width: min-content;
+  gap: 10px;
 `;
