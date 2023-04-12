@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   BarGraph,
   BarGraphPtr,
+  BlueScreenText,
   BlueScreenCont,
 } from "../../styles/BlueScreen.style";
 
@@ -18,6 +19,15 @@ const BlueScreen = () => {
     };
   }, []);
 
+  const RenderText = () => (
+    <BlueScreenText>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid modi
+      illo unde aut architecto reiciendis excepturi, blanditiis culpa iure!
+      Dignissimos harum voluptatem vel quaerat sint in quae fugiat
+      necessitatibus temporibus!
+    </BlueScreenText>
+  );
+
   return (
     <BlueScreenCont>
       {Array.from({ length: numberOfBars }).map((_, index) => (
@@ -27,6 +37,7 @@ const BlueScreen = () => {
           <BarGraphPtr />
         </BarGraph>
       ))}
+      <RenderText />
     </BlueScreenCont>
   );
 };

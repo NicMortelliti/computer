@@ -26,5 +26,14 @@ export const BlueScreenCont = styled.div`
   height: 100px;
   padding: 0 10px;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
+`;
+
+export const BlueScreenText = styled.p`
+  color: white;
+  width: 50%;
+  height: 80%;
+  overflow: hidden;
+  font-size: 5px;
+  line-height: 5px;
 `;
