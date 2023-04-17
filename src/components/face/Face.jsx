@@ -9,9 +9,7 @@ const Face = () => {
 
   return (
     <div>
-      {eyesPattern.map((row, index) => (
-        <FaceRow key={index} rowOfPixelsArray={row} />
-      ))}
+      <FaceAnimation />
       {mouthPattern.map((row, index) => (
         <FaceRow key={index} rowOfPixelsArray={row} />
       ))}
